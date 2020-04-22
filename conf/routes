@@ -1,0 +1,26 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# https://www.playframework.com/documentation/latest/ScalaRouting
+# ~~~~
+
+# An example controller showing a sample home page
+GET     /                           controllers.HomeController.index
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)
+
+# Custom routes added to learn the process
+# Returns Covid-19 stats for a country
+GET     /covid/txt/:country             controllers.CovidController.statsAsTxt(country: String)
+GET     /covid/ui/:country              controllers.CovidController.statsForUI(country: String)
+
+GET     /cassandra/fetchVersion         controllers.CassandraController.fetchVersion
+GET     /cassandra/fetchFromKeySpace    controllers.CassandraController.fetchFromKeySpace
+
+GET     /appstore/apps                  controllers.AppStoreController.apps
+GET     /appstore/app                   controllers.AppStoreController.app(id: Int ?=1)
+POST    /appstore/publish               controllers.AppStoreController.publish(id: Int, name: String ?="Default App Name")
+PUT     /appstore/update                controllers.AppStoreController.update(id: Int, name: String)
+DELETE  /appstore/delete                controllers.AppStoreController.delete(id: Int)
+
+

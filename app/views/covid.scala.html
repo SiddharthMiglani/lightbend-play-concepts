@@ -1,0 +1,17 @@
+@(country: String, confirmed: Int, recovered: Int, deaths: Int, lastUpdated: String)
+
+@main("COVID - 19 Stats") {
+    <div>
+        <div>
+            <h1 style=" text-align:center">COVID 19 statistics for @country</h1>
+        </div>
+        <div>
+            <h2 style ="color: blue">Confirmed cases: @confirmed</h2>
+            <h2 style ="color: green">Recovered: @recovered</h2>
+            <h2 style ="color: red">Deaths: @deaths</h2>
+        </div>
+        <div>
+            <span>Last updated: @lastUpdated</span>
+        </div>
+    </div>
+}
